@@ -575,9 +575,9 @@ def analyze_and_save(keywords, category_name="Auto"):
             elif search_dod >= 15:
                 trend_type = "📈 검색 수요 상승 중"
             elif search_dod <= -10:
-                trend_type = "📉 수요 조정기"
+                trend_type = "📉 하락/조정기"
             else:
-                trend_type = "⏳ 관측 중"
+                trend_type = "❄️ 관심 저조"
         else:
             # 1. 검색 체급 (30%): 천장 없는 선형 점수
             score_s_base = c_total_search * 0.3
@@ -605,13 +605,13 @@ def analyze_and_save(keywords, category_name="Auto"):
             if score_v_views >= 15 and score_v_vol < 5:
                 trend_type = "💎 블루오션 (공급 부족)"
             elif score_v_views >= 15 and score_v_vol >= 7:
-                trend_type = "🔥 옴니채널 메가트렌드"
+                trend_type = "🔥 메가트렌드"
             elif search_dod > 30 or view_dod > 30:
-                trend_type = "🚀 급상승 저류 포착"
+                trend_type = "🚀 급상승"
             elif is_new and final_score >= 40:
                 trend_type = "✨ 신규 탐지: 라이징"
             else:
-                trend_type = "👀 관측 중"
+                trend_type = "❄️ 관심 저조"
 
         # 🚀 여기서 Groq API가 호출되어 연관어를 기가 막히게 뽑아줌!
         related_kws  = extract_related_keywords(k, titles)
