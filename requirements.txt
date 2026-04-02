@@ -1,0 +1,12 @@
+streamlit
+pandas
+sqlalchemy
+pymysql
+plotly
+requests
+pytrends
+selenium
+webdriver-manager
+mecab-python3
+konlpy
+groq
